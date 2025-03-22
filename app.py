@@ -1,22 +1,39 @@
-import pytz
-import yaml
-import datetime
-import requests
-#from tools.final_answer import FinalAnswerTool
-#from UI import GradioUI
-from smolagents import CodeAgent, DuckDuckGoSearchTool, HfApiModel, load_tool, tool
+import gradio as gr
+from agent_setup import agent
 
-# Create Tools
+def process_query(query):
+    """Process the user query using the agent and return the response"""
+    try:
+        response = agent.run(query)
+        return response
+    except Exception as e:
+        return f"Error: {str(e)}"
 
-# Import a text-to-image generation tool from the Hugging Face Hub
-#image_generation_tool = load_tool("agents-course/text-to-image", trust_remote_code=True)
+# Create the Gradio interface
+demo = gr.Interface(
+    fn=process_query,
+    inputs=[
+        gr.Textbox(
+            label="Enter your query",
+            placeholder="e.g., What's the difference between a list and a tuple in Python?",
+            lines=3
+        )
+    ],
+    outputs=[
+        gr.Textbox(
+            label="Agent Response",
+            lines=10
+        )
+    ],
+    title="AI Code Assistant",
+    description="Ask questions about programming and get detailed answers from the AI agent.",
+    theme=gr.themes.Soft(),
+    examples=[
+        ["What's the difference between a list and a tuple in Python?"],
+        ["Explain how to use list comprehension in Python"],
+        ["What are decorators in Python and how do they work?"]
+    ]
+)
 
-# Initialize the FinalAnswerTool
-
-# Use a Hugging Face Endpoint
-
-# Load prompt templates from a YAML file
-
-# Initialize a CodeAgent instance, which will use the model and tools
-
-# Launch a Gradio UI to interact with the agent
+if __name__ == "__main__":
+    demo.launch(share=False)
