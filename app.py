@@ -6,7 +6,6 @@ import requests
 #from UI import GradioUI
 from smolagents import CodeAgent, DuckDuckGoSearchTool, HfApiModel, load_tool, tool
 
-
 # Create Tools
 
 # Import a text-to-image generation tool from the Hugging Face Hub
