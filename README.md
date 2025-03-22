@@ -1,12 +1,6 @@
 # simple-agent
 
-Hugging Face allow us to build agents or tools by framework called `smolagents`.
-
-`smolagents` have some built-in Classes , methods and tools to help us build agents, like `DuckDuckGoSearch` or `Markdownify`
-
-We can also enherit tools from the other.
-
-Hugging Face allow as to serve agents on spaces or we can run them locally.
+Hugging Face allow us to build agents or tools by framework called `smolagents`. `smolagents` have some built-in Classes , methods and tools to help us build agents, like `DuckDuckGoSearch` or `Markdownify`. We can also enherit tools from the other. Hugging Face allow as to serve agents on spaces or we can run them locally.
 
 ## refs
 
