@@ -36,4 +36,5 @@ demo = gr.Interface(
 )
 
 if __name__ == "__main__":
+    # Launch a Gradio UI to interact with the agent
     demo.launch(share=False)

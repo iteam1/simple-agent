@@ -1,4 +1,22 @@
-### Planning
+### System Prompt components
+
+These are the components in a system prompt for a agent:
+
+1. Agent's Role?
+2. Agent's Behavior? (ReAct)
+3. Some Examples? (Few-Shot)
+4. Rules, constraints, or guidelines.
+5. Agent's Tools?
+6. Planning components
+- **intial_facts**: Facts given in the task
+- **update_facts_pre_messages**: Ensure that facts are updated before execution
+- **update_facts_post_messages**: Update facts based on new discoveries
+- **initial_plan**: High-level plan for the task
+- **update_plan_pre_messages**: Ensure that plans are updated before execution
+- **update_plan_post_messages**: Update plans based on new discoveries
+- **end_plan**: The final plan
+
+### Planning methodology
 
 This content outlines a structured approach to problem-solving by systematically analyzing tasks, identifying available and missing information, and developing an efficient step-by-step plan. It ensures clarity, adaptability, and effective resource utilization throughout the process.  
 
