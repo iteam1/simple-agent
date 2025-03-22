@@ -8,6 +8,8 @@ Key objectives:
 3. **Continuously refining the plan based on new insights.**  
 4. **Maximizing efficiency through tools and collaboration.**
 
+---
+
 #### **1. Fact-Gathering and Analysis**
 - The **initial_facts** section helps establish a clear understanding of what is known and what still needs to be discovered.
 - It categorizes facts into:
@@ -110,8 +112,6 @@ Step 5: Deploy a prototype and collect user feedback for iterative improvement.
 Step 6: Enhance chatbot performance based on real-world interactions.
 <end_plan>
 ```
-
----
 
 ### **Key Takeaways**
 1. **Structured problem-solving** – The task is broken into clear steps.
