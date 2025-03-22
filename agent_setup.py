@@ -10,6 +10,11 @@ from smolagents import CodeAgent, DuckDuckGoSearchTool, HfApiModel, load_tool, t
 model_id = "Qwen/Qwen2.5-Coder-32B-Instruct"
 
 # Define tools
+@tool
+def dummy_tool(query:str)->str:
+    """A dummy tool that does nothing"""
+    return f"Dummy tool output: {query}"
+
 
 # Import a text-to-image generation tool from the Hugging Face Hub
 #image_generation_tool = load_tool("agents-course/text-to-image", trust_remote_code=True)
@@ -28,7 +33,9 @@ custom_role_conversions=None,
 
 # Initialize a CodeAgent instance, which will use the model and tools
 agent = CodeAgent(model=model,
-                tools=[DuckDuckGoSearchTool()],
+                tools=[DuckDuckGoSearchTool(),
+                       dummy_tool,
+                ],
                 max_steps=6,
                 verbosity_level=1,
                 grammar=None,
@@ -41,5 +48,3 @@ agent = CodeAgent(model=model,
 # Run the agent with a sample query
 #response = agent.run("What's the difference between a list and a tuple in Python?")
 #print(response)
-
-# Launch a Gradio UI to interact with the agent
